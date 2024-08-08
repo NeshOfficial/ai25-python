@@ -12,6 +12,16 @@ if pyenv --version; then
   pyenv install --skip-existing
 fi
 
+if pyenv --version; then
+  pyenv install --skip-existing
+fiif pyenv --version; then
+
+
+  pyenv install --skip-existing
+fiif pyenv --version; then
+  pyenv install --skip-existing
+fi
+
 # install poetry if not already installed
 if ! poetry --version; then
   brew install poetry
