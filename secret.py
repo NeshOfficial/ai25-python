@@ -26,6 +26,8 @@ EMAIL_PASSWORD = 'your-email-password'
 EMAIL_USE_TLS = True
 
 # Secret key for session management
+# Secret key for session management
+# Secret key for session management
 SECRET_KEY = 'your-secret-key-for-session-management'
 
 # Encryption keys
