@@ -39,3 +39,57 @@ if __name__ == "__main__":
 
     # Run Git operations
     run_git_commands()
+import math
+
+def calculate_mean(data):
+    """Calculate the mean of a list of numbers."""
+    return sum(data) / len(data)
+
+def calculate_variance(data, mean):
+    """Calculate the variance of a list of numbers."""
+    return sum((x - mean) ** 2 for x in data) / len(data)
+
+def calculate_stddev(data):
+    """Calculate the standard deviation of a list of numbers."""
+    mean = calculate_mean(data)
+    variance = calculate_variance(data, mean)
+    stddev = math.sqrt(variance)
+    return stddev
+
+def read_data_from_file(filename):
+    """Read a list of numbers from a file."""
+    with open(filename, 'r') as file:
+        data = [float(line.strip()) for line in file]
+    return data
+
+def write_results_to_file(filename, mean, stddev):
+    """Write the mean and standard deviation to a file."""
+    with open(filename, 'w') as file:
+        file.write(f"Mean: {mean}\n")
+        file.write(f"Standard Deviation: {stddev}\n")
+
+def main():
+    input_file = 'data.txt'
+    output_file = 'results.txt'
+
+    # Read data from file
+    data = read_data_from_file(input_file)
+
+    # Calculate mean and standard deviation
+    mean = calculate_mean(data)
+    stddev = calculate_stddev(data)
+
+    # Print results to console
+    print(f"Mean: {mean}")
+    print(f"Standard Deviation: {stddev}")
+
+    # Write results to file
+    write_results_to_file(output_file, mean, stddev)
+
+    # Additional functionality: Check if standard deviation is within a threshold
+    threshold = 10.0
+    if stddev > threshold:
+        print(f"Warning: Standard deviation exceeds the threshold of {threshold}.")
+
+if __name__ == "__main__":
+    main()
