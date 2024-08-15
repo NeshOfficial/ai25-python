@@ -1,23 +1,39 @@
 # secrets.py
 
 
-# Application settings
-DEBUG_MODE = True
-ENVIRONMENT = 'development'
-APP_PORT = 8000
+# Database configuration
+DB_HOST = 'localhost'
+DB_PORT = 5432
+DB_NAME = 'your_database_name'
+DB_USER = 'your_database_user'
+DB_PASSWORD = 'your_database_password'
 
-# File storage configuration
-FILE_STORAGE_PATH = '/path/to/file/storage'
-MAX_UPLOAD_SIZE_MB = 50
+# Email server configuration
+EMAIL_HOST = 'smtp.example.com'
+EMAIL_PORT = 587
+EMAIL_USERNAME = 'your-email@example.com'
+EMAIL_PASSWORD = 'your-email-password'
+EMAIL_USE_TLS = True
 
-# Social media integration settings
-INSTAGRAM_ACCESS_TOKEN = 'your-instagram-access-token'
-LINKEDIN_API_KEY = 'your-linkedin-api-key'
+# Secret key for session management
+# Secret key for session management
+# Secret key for session management
+SECRET_KEY = 'your-secret-key-for-session-management'
 
-# Security settings
-CSRF_SECRET_KEY = 'your-csrf-secret-key'
-SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_HTTPONLY = True
+# Encryption keys
+ENCRYPTION_KEY = 'your-encryption-key'
+DECRYPTION_KEY = 'your-decryption-key'
+
+# OAuth configuration
+OAUTH_CLIENT_ID = 'your-oauth-client-id'
+OAUTH_CLIENT_SECRET = 'your-oauth-client-secret'
+OAUTH_REDIRECT_URI = 'http://yourapp.com/oauth/callback'
+
+# Third-party API configurations
+THIRD_PARTY_API_URL = 'https://api.thirdparty.com'
+THIRD_PARTY_API_TOKEN = 'your-third-party-api-token'
+
+
 
 # Other secrets
 SECRET_1 = 'your-secret-value-1'
