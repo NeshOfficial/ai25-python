@@ -8,6 +8,15 @@ def generate_difficult_filename(length=50):
     return ''.join(random.choice(characters) for _ in range(length))
 
 # Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
+# Function to write 50 lines to a file
 def write_lines_to_file(filename, num_lines=50):
     with open(filename, 'w') as file:
         for i in range(1, num_lines + 1):

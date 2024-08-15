@@ -27,10 +27,14 @@ EMAIL_USE_TLS = True
 
 # Secret key for session management
 # Secret key for session management
-# Secret key for session management
 SECRET_KEY = 'your-secret-key-for-session-management'
 
 # Encryption keys
+# Secret key for session management
+# Secret key for session management
+# Secret key for session management
+# Secret key for session management
+# Secret key for session management
 ENCRYPTION_KEY = 'your-encryption-key'
 DECRYPTION_KEY = 'your-decryption-key'
 
