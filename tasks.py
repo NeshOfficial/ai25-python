@@ -1,121 +1,27 @@
+import string
+import random
+import os
 
+# Function to generate a difficult file name
+def generate_difficult_filename(length=50):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(characters) for _ in range(length))
 
-from invoke import task
+# Function to write 50 lines to a file
+def write_lines_to_file(filename, num_lines=50):
+    with open(filename, 'w') as file:
+        for i in range(1, num_lines + 1):
+            file.write(f'This is line number {i}\n')
 
+# Generate a difficult file name
+difficult_filename = generate_difficult_filename()
 
-@task
-def formatter(tsk, fix=False):
-    """
-    python format
-    """
-    auto_fix = "" if fix else "--check --diff"
-    cmd = " && ".join(
-        [
-            f"python -m black . {auto_fix}",
-        ]
-    )
-    tsk.run(cmd, echo=True, pty=True)
+# Ensure the file is saved in a safe location
+safe_directory = os.path.expanduser('~/difficult_files')
+os.makedirs(safe_directory, exist_ok=True)
+file_path = os.path.join(safe_directory, difficult_filename)
 
+# Write 50 lines to the file
+write_lines_to_file(file_path)
 
-@task
-def lint(tsk, fix=False):
-    """
-    python lint
-    """
-    flags = "--fix" if fix else ""
-    cmd = " && ".join(
-        [
-            f"ruff *.py {flags} ai21/ tests/",
-        ]
-    )
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task(optional=["coverage"], help={"coverage": "[true|false]"})
-def test(tsk, coverage=False):
-    """
-    Run unit tests
-    """
-    cov = "--cov --cov-report=term-missing" if coverage else ""
-    cmd = f"poetry run pytest {cov}"
-    tsk.run(cmd, echo=True, pty=True)
-
-@task
-def audit(tsk):
-    """
-    Run audit check on the dependent packages
-    """
-    cmd = "safety check --full-report"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def staticcheck(tsk):
-    """
-    Run static check on the projects files
-    """
-    cmd = "mypy ai21 tests"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def isort(tsk):
-    """
-    Run static check on the projects files
-    """
-    cmd = "isort ai21 tests"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def audit(tsk):
-    """
-    Run audit check on the dependent packages
-    """
-    cmd = "safety git check --full-report"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def staticcheck(tsk):
-    """
-    Run static check on the projects files
-    """
-    cmd = "mypy ai21 tests"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def isort(tsk):
-    """
-    Run static check on the projects files
-    """
-    cmd = "isort ai21 tests"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def build(tsk):
-    """
-    generate a package for ai21
-    """
-    cmd = "poetry build"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def update(tsk):
-    """
-    update outdated packages
-    """
-    cmd = "poetry update"
-    tsk.run(cmd, echo=True, pty=True)
-
-
-@task
-def outdated(tsk):
-    """
-    update outdated packages
-    """
-    cmd = "poetry show --outdated --top-level"
-    tsk.run(cmd, echo=True, pty=True)
+print(f'File with difficult name created at: {file_path}')
