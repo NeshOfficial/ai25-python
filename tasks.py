@@ -1,9 +1,5 @@
-"""
-<<<<<<< refs/remotes/origin/visualization
-tasks to kick-off the project
-=======
-tasks to kick-off the project* chore(release): v2.9.1 [skip ci] ([`5ed7f07`](https://github.com/AI21Labs/ai21-python/commit/5ed7f07e677ce60eb960991f3c601869d4e2c68c))
 
+<<<<<<< HEAD
 * chore(deps-dev): bump zipp from 3.18.1 to 3.19.1 (#183)
 * chore(release): v2.9.1 [skip ci] ([`5ed7f07`](https://github.com/AI21Labs/ai21-python/commit/5ed7f07e677ce60eb960991f3c601869d4e2c68c))
 
@@ -77,6 +73,8 @@ tasks to kick-off the project* chore(release): v2.9.1 [skip ci] ([`5ed7f07`](htt
 * chore(deps-dev): bump zipp from 3.18.1 to 3.19.1 (#183)
 >>>>>>> local
 """
+=======
+>>>>>>> 01495eab794c55e2304696451de3defa19524bcf
 
 from invoke import task
 

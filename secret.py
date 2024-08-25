@@ -1,5 +1,6 @@
 # secrets.py
 
+<<<<<<< HEAD
 # API keys for various services
 API_KEY_TWITTER = 'your-twitter-api-key'
 API_KEY_GOOGLE = 'your-google-api-key'
@@ -43,8 +44,9 @@ OAUTH_REDIRECT_URI = 'http://yourapp.com/oauth/callback'
 THIRD_PARTY_API_URL = 'https://api.thirdparty.com'
 THIRD_PARTY_API_TOKEN = 'your-third-party-api-token'
 
-# Log settings
 LOGGING_LEVEL = 'DEBUG'
+# Log settings
+# Log settings
 LOG_FILE_PATH = '/var/log/yourapp.log'
 
 # Application settings
