@@ -1,12 +1,17 @@
-# secrets.py
+Database configuration
+DB_HOST = 'localhost'
+DB_PORT = 5432
+DB_NAME = 'your_database_name'
+DB_USER = 'your_database_user'
+DB_PASSWORD = 'your_database_password'
 
+# Email server configuration
+EMAIL_HOST = 'smtp.example.com'
+EMAIL_PORT = 587
+EMAIL_USERNAME = 'your-email@example.com'
+EMAIL_PASSWORD = 'your-email-password'
+EMAIL_USE_TLS = True
 
-FILE_STORAGE_PATH = '/path/to/file/storage'
-MAX_UPLOAD_SIZE_MB = 50
-
-# Social media integration settings
-INSTAGRAM_ACCESS_TOKEN = 'your-instagram-access-token'
-LINKEDIN_API_KEY = 'your-linkedin-api-key'
 
 
 # Database configuration
