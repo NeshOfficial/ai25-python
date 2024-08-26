@@ -7,6 +7,7 @@ ENVIRONMENT = 'development'
 APP_PORT = 8000
 
 # File storage configuration
+# File storage configuration
 FILE_STORAGE_PATH = '/path/to/file/storage'
 MAX_UPLOAD_SIZE_MB = 50
 
