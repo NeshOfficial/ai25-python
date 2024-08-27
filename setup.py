@@ -96,38 +96,34 @@
 # #     characters = string.ascii_letters + string.digits + string.punctuation
 # #     return ''.join(random.choice(characters) for _ in range(length))
 
-# # # Function to write 50 lines to a file
-# # def write_lines_to_file(filename, num_lines=50):
-# #     with open(filename, 'w') as file:
-# #         for i in range(1, num_lines + 1):
-# #             file.write(f'This is line number {i}\n')
+# Function to write 50 lines to a file
+def write_lines_to_file(filename, num_lines=50):
+    with open(filename, 'w') as file:
+        for i in range(1, num_lines + 1):
+            file.write(f'This is line number {i}\n')
 
-# # # Generate a difficult file name
-# # difficult_filename = generate_difficult_filename()
-# # >>>>>>> master
+# Generate a difficult file name
+difficult_filename = generate_difficult_filename()
 
-# # # Ensure the file is saved in a safe location
-# # safe_directory = os.path.expanduser('~/difficult_files')
-# # os.makedirs(safe_directory, exist_ok=True)
-# # file_path = os.path.join(safe_directory, difficult_filename)
 
-# # # Write 50 lines to the file
-# # write_lines_to_file(file_path)
+# Ensure the file is saved in a safe location
+safe_directory = os.path.expanduser('~/difficult_files')
+os.makedirs(safe_directory, exist_ok=True)
+file_path = os.path.join(safe_directory, difficult_filename)
 
-# # <<<<<<< visualization
-# # # first(    name="ai21",
-# #     version=VERSION,
-# #     author="AI21 Labs",
-# #     author_email="support@ai21.com",
-# #     long_description_content_type="text/markdown",
-# #     long_description=long_description,
+# Write 50 lines to the file
+write_lines_to_file(file_path)
+
+
+# first(    name="ai21",
+    version=VERSION,
+    author="AI21 Labs",
+    author_email="support@ai21.com",
+    long_description_content_type="text/markdown",
+    long_description=long_description,
    
-# #     keywords=["python", "sdk", "ai", "ai21", "jurassic", "ai21-python", "llm"],
-# #     install_requires=[
-# #         "httpx",
-# #     ],
+    keywords=["python", "sdk", "ai", "ai21", "jurassic", "ai21-python", "llm"],
+    install_requires=[
+        "httpx",
+    ],
 
-# # =======
-# # print(f'File with difficult name created at: {file_path}')
-# # >>>>>>> master
-# >>>>>>> master
