@@ -53,6 +53,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # install pre-commit
+# install pre-commit
 pre-commit install --install-hooks -t pre-commit -t commit-msg --overwrite
 echo
 
