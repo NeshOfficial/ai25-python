@@ -1,66 +1,27 @@
-# markresolve.py
-
+import string
+import random
 import os
 
-def read_issues(file_path):
-    """
-    Reads issues from a file and returns them as a list of strings.
-    :param file_path: Path to the file containing issues.
-    :return: List of issues.
-    """
-    if not os.path.isfile(file_path):
-        return [], f"Error: {file_path} does not exist."
+# Function to generate a difficult file name
+def generate_difficult_filename(length=50):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(characters) for _ in range(length))
 
-    try:
-        with open(file_path, 'r') as file:
-            issues = file.readlines()
-        return issues, None
-    except Exception as e:
-        return [], f"Error reading file: {e}"
+# Function to write 50 lines to a file
+def write_lines_to_file(filename, num_lines=50):
+    with open(filename, 'w') as file:
+        for i in range(1, num_lines + 1):
+            file.write(f'This is line number {i}\n')
 
-def write_issues(file_path, issues):
-    """
-    Writes a list of issues to a file.
-    :param file_path: Path to the file.
-    :param issues: List of issues to write.
-    """
-    try:
-        with open(file_path, 'w') as file:
-            file.writelines(issues)
-    except Exception as e:
-        print(f"Error writing to file: {e}")
+# Generate a difficult file name
+difficult_filename = generate_difficult_filename()
 
-def mark_resolved(issues, issue_number):
-    """
-    Marks an issue as resolved by adding '(Resolved)' to it.
-    :param issues: List of issues.
-    :param issue_number: The issue number to mark as resolved.
-    :return: Updated list of issues.
-    """
-    try:
-        issues[issue_number - 1] = issues[issue_number - 1].strip() + " (Resolved)\n"
-    except IndexError:
-        print(f"Error: Issue number {issue_number} does not exist.")
-    return issues
+# Ensure the file is saved in a safe location
+safe_directory = os.path.expanduser('~/difficult_files')
+os.makedirs(safe_directory, exist_ok=True)
+file_path = os.path.join(safe_directory, difficult_filename)
 
-def main():
-    """
-    Main function to execute the script.
-    """
-    file_path = input("Enter the path to the issues file: ")
-    issues, error = read_issues(file_path)
-    
-    if error:
-        print(error)
-        return
-    
-    try:
-        issue_number = int(input("Enter the issue number to mark as resolved: "))
-        issues = mark_resolved(issues, issue_number)
-        write_issues(file_path, issues)
-        print(f"Issue {issue_number} marked as resolved.")
-    except ValueError:
-        print("Error: Please enter a valid issue number.")
+# Write 50 lines to the file
+write_lines_to_file(file_path)
 
-if __name__ == "__main__":
-    main()
+print(f'File with difficult name created at: {file_path}')
